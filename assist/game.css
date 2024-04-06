@@ -1,0 +1,196 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 0 8%;
+}
+a {
+  text-decoration: none;
+}
+.btn {
+  padding: 10px 18px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn.black,
+.btn.white:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn.white,
+.btn.black:hover {
+  background-color: white;
+  color: black;
+}
+/* paramete */
+.parametre {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+.score {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+}
+#scoreNumber {
+  font-size: 70px;
+}
+.sel-num {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sel-num p {
+  align-self: flex-end;
+  font-size: 24px;
+  font-weight: 700;
+}
+.numbers {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+}
+.number {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 200ms ease-in;
+}
+.number:hover,
+.number.checked {
+  color: white;
+  background-color: black;
+}
+.numbers.error::after {
+  content: "You have not selected any number";
+  position: absolute;
+  top: -30px;
+  right: 0;
+  color: red;
+}
+@media (max-width: 702px) {
+  .parametre {
+    flex-direction: column;
+  }
+  .numbers {
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .sel-num p {
+    align-self: center;
+  }
+}
+.container {
+  width: 200px;
+  height: 200px;
+  perspective: 500px;
+  margin: 10px auto;
+  cursor: pointer;
+}
+.cube {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: 300ms;
+}
+.cube.animation {
+  animation: turn 2s ease-out;
+}
+@keyframes turn {
+  0% {
+    transform: rotate3d(0, 1, 3, 0);
+  }
+  100% {
+    transform: rotate3d(1, 5, 3, 6800deg);
+  }
+}
+.face-1 {
+  transform: rotateX(-90deg);
+}
+.face-2 {
+  transform: rotateX(90deg);
+}
+.face-3 {
+  transform: rotateY(90deg);
+}
+.face-4 {
+  transform: rotateY(-90deg);
+}
+.face-5 {
+  transform: rotateX(0);
+}
+.face-6 {
+  transform: rotateY(-180deg);
+}
+.cube img {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  background: rgb(52, 51, 51);
+  background: linear-gradient(
+    145deg,
+    rgba(52, 51, 51, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  border-radius: 10px;
+}
+.front {
+  transform: translateZ(100px);
+}
+.back {
+  transform: translateZ(-100px) rotateY(180deg);
+}
+.left {
+  transform: translateX(-100px) rotateY(-90deg);
+}
+.right {
+  transform: translateX(100px) rotateY(90deg);
+}
+.top {
+  transform: translateY(-100px) rotateX(90deg);
+}
+.bottom {
+  transform: translateY(100px) rotateX(-90deg);
+}
+
+main .content {
+  text-align: center;
+  margin-top: 50px;
+}
+main h3 {
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+main .btn {
+  width: fit-content;
+  margin: 20px auto;
+}
+.rules {
+  display: none;
+  background-color: #fbf1f1;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+.rules.show {
+  display: block;
+}
+ul {
+  margin-left: 50px;
+}

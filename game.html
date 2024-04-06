@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rolling time</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assist/game.css" />
+  </head>
+  <body>
+    <div class="parametre">
+      <div class="score">
+        <div id="scoreNumber">0</div>
+        <p>Total Score</p>
+      </div>
+      <div class="sel-num">
+        <div class="numbers">
+          <div class="number">1</div>
+          <div class="number">2</div>
+          <div class="number">3</div>
+          <div class="number">4</div>
+          <div class="number">5</div>
+          <div class="number">6</div>
+        </div>
+        <p>Select Number</p>
+      </div>
+    </div>
+    <main>
+      <div class="container">
+        <div class="cube">
+          <img class="top" src="images/dice_1.png" alt="" />
+          <img class="bottom" src="images/dice_2.png" alt="" />
+          <img class="left" src="images/dice_3.png" alt="" />
+          <img class="right" src="images/dice_4.png" alt="" />
+          <img class="front" src="images/dice_5.png" alt="" />
+          <img class="back" src="images/dice_6.png" alt="" />
+        </div>
+      </div>
+      <div class="content">
+        <h3>Click on dice to role</h3>
+        <div onclick="reset()" class="btn white">Reset score</div>
+        <div onclick="showRule()" class="btn black">Show Rules</div>
+      </div>
+      <div class="rules">
+        <h3>How to play dice game</h3>
+        <ul>
+          <li>Select any number</li>
+          <li>Click on dice image</li>
+          <li>
+            after click on dice if selected number is equal to dice number you
+            will get same point as dice
+          </li>
+          <li>if you get wrong guess then 2 point will be dedcuted</li>
+        </ul>
+      </div>
+    </main>
+    <script src="assist/main.js"></script>
+  </body>
+</html>
