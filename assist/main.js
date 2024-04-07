@@ -34,6 +34,8 @@ function updateScore(dice, user) {
   let newScore = parseInt(score.innerHTML)
   if (dice == user) {
     newScore += dice
+  } else if (dice - parseInt(user) == 1 || dice - parseInt(user) == -1) {
+    newScore += 1
   } else {
     newScore -= 2
   }
